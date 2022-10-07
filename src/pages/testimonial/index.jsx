@@ -1,4 +1,5 @@
 import React from "react";
+import courses1 from "../../img/img.jpeg";
 
 const Testimonial = () => {
   return (
@@ -20,60 +21,28 @@ const Testimonial = () => {
           className="owl-carousel testimonial-carousel wow fadeInUp"
           data-wow-delay="0.1s"
         >
-          <div className="testimonial-item text-center">
-            <img
-              className="img-fluid bg-light rounded-circle p-2 mx-auto mb-4"
-              src="img/testimonial-1.jpg"
-              style={{ width: "100px", height: "100px" }}
-              alt="a"
-            />
-            <div className="testimonial-text rounded text-center p-4">
-              <p>
-                Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                clita erat magna elitr erat sit sit erat at rebum justo sea
-                clita.
-              </p>
-              <h5 className="mb-1">Doner Name</h5>
-              <span className="fst-italic">Profession</span>
-            </div>
-          </div>
-          <div className="testimonial-item text-center">
-            <img
-              className="img-fluid bg-light rounded-circle p-2 mx-auto mb-4"
-              src="img/testimonial-2.jpg"
-              style={{ width: "100px", height: "100px" }}
-              alt="a"
-            />
-            <div className="testimonial-text rounded text-center p-4">
-              <p>
-                Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                clita erat magna elitr erat sit sit erat at rebum justo sea
-                clita.
-              </p>
-              <h5 className="mb-1">Doner Name</h5>
-              <span className="fst-italic">Profession</span>
-            </div>
-          </div>
-          <div className="testimonial-item text-center">
-            <img
-              className="img-fluid bg-light rounded-circle p-2 mx-auto mb-4"
-              src="img/testimonial-3.jpg"
-              style={{ width: "100px", height: "100px" }}
-              alt="a"
-            />
-            <div className="testimonial-text rounded text-center p-4">
-              <p>
-                Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                clita erat magna elitr erat sit sit erat at rebum justo sea
-                clita.
-              </p>
-              <h5 className="mb-1">Doner Name</h5>
-              <span className="fst-italic">Profession</span>
-            </div>
-          </div>
+          {[1, 2, 3].map((item) => {
+            return (
+              <div className="testimonial-item text-center" key={item}>
+                <img
+                  className="img-fluid bg-light rounded-circle p-2 mx-auto mb-4"
+                  src={courses1}
+                  style={{ width: "100px", height: "100px" }}
+                  alt="a"
+                />
+                <div className="testimonial-text rounded text-center p-4">
+                  <p>
+                    Clita clita tempor justo dolor ipsum amet kasd amet duo
+                    justo duo duo labore sed sed. Magna ut diam sit et amet stet
+                    eos sed clita erat magna elitr erat sit sit erat at rebum
+                    justo sea clita.
+                  </p>
+                  <h5 className="mb-1">Doner Name</h5>
+                  <span className="fst-italic">Profession</span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

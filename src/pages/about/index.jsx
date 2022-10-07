@@ -1,6 +1,6 @@
 import React from "react";
-import about1 from "./../../img/about-1.jpg";
-import about2 from "./../../img/about-2.jpg";
+import about1 from "./../../img/img.jpeg";
+import about2 from "./../../img/img.jpeg";
 
 const About = () => {
   return (
@@ -46,13 +46,13 @@ const About = () => {
                 Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
                 sed stet lorem sit clita duo justo magna dolore erat amet
               </p>
-              <a className="btn btn-primary py-2 px-3 me-3" href="a">
+              <a className="btn btn-primary py-2 px-3 me-3" href="#">
                 Learn More
                 <div className="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                   <i className="fa fa-arrow-right"></i>
                 </div>
               </a>
-              <a className="btn btn-outline-primary py-2 px-3" href="a">
+              <a className="btn btn-outline-primary py-2 px-3" href="#">
                 Contact Us
                 <div className="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                   <i className="fa fa-arrow-right"></i>

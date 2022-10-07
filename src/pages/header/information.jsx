@@ -23,13 +23,13 @@ const Information = () => {
         >
           <i className="fab fa-facebook-f"></i>
         </a>
-        <a className="text-white-50 ms-3" href="twitter">
+        <a className="text-white-50 ms-3" href="#">
           <i className="fab fa-twitter"></i>
         </a>
-        <a className="text-white-50 ms-3" href="linkedin">
+        <a className="text-white-50 ms-3" href="#">
           <i className="fab fa-linkedin-in"></i>
         </a>
-        <a className="text-white-50 ms-3" href="instagram">
+        <a className="text-white-50 ms-3" href="#">
           <i className="fab fa-instagram"></i>
         </a>
       </div>
