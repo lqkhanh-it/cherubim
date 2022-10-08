@@ -1,23 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import defaultImage from "../../img/default.jpeg";
+import { getData } from "../../services/firebase";
+
+const temp = [
+  {
+    id: 1,
+    title: "Mùa lễ Halloween sắp tới",
+    description:
+      "Cùng Cherubim đón chờ một tháng 10 bùng nổ và nhiều ưu đãi nhé!!",
+    image:
+      "https://i0.wp.com/www.myuna.ca/assets/media/2020/10/Halloween-2021-banner-01.png?fit=1920%2C1080&ssl=1",
+    link: "#",
+    theme: "light",
+    float: "start",
+  },
+];
 
 const Banner = () => {
-  const data = [
-    {
-      id: 1,
-      title: "Mùa lễ Halloween sắp tới",
-      description:
-        "Cùng Cherubim đón chờ một tháng 10 bùng nổ và nhiều ưu đãi nhé!!",
-      image:
-        "https://i0.wp.com/www.myuna.ca/assets/media/2020/10/Halloween-2021-banner-01.png?fit=1920%2C1080&ssl=1",
-      link: "#",
-      theme: "light",
-      float: "start",
-    },
-  ];
+  const [data, setData] = useState();
+  const [textColor, setTextColor] = useState("text-primary");
+  useEffect(() => {
+    async function fetchData() {
+      if (!data || data?.length === 0) {
+        const tempData = await getData("banner");
+        console.log(tempData);
+        setData([...tempData]);
+        if (tempData[0]?.theme === "light") {
+          setTextColor("text-white");
+        }
+      }
+    }
+    fetchData();
+    console.log(123);
+  }, []);
+
+  useEffect(() => {
+    if (data?.length > 0 && data[0]?.theme === "light") {
+      setTextColor("text-white");
+    }
+  }, [data]);
 
   const heightConfig = { maxHeight: "100vh", minHeight: "100vh" };
-  const textColor = data[0]?.theme === "light" ? "text-white" : "text-primary";
 
   return (
     <div className="container-fluid p-0 mb-5">

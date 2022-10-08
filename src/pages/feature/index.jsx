@@ -12,7 +12,8 @@ const Feature = () => {
       total: 190,
       happy: 187,
       percent: 99,
-      img: "https://cdn3d.iconscout.com/3d/premium/thumb/nft-using-vr-4975998-4149676.png",
+      image:
+        "https://cdn3d.iconscout.com/3d/premium/thumb/nft-using-vr-4975998-4149676.png",
       link: "#",
     },
     {
@@ -24,7 +25,8 @@ const Feature = () => {
       total: 190,
       happy: 187,
       percent: 99,
-      img: "https://cdn3d.iconscout.com/3d/premium/thumb/virtual-vision-4768955-3975759.png",
+      image:
+        "https://cdn3d.iconscout.com/3d/premium/thumb/virtual-vision-4768955-3975759.png",
       link: "#",
     },
     {
@@ -36,7 +38,8 @@ const Feature = () => {
       total: 190,
       happy: 187,
       percent: 99,
-      img: "https://cdn3d.iconscout.com/3d/premium/thumb/metaverse-5796851-4863019.png",
+      image:
+        "https://cdn3d.iconscout.com/3d/premium/thumb/metaverse-5796851-4863019.png",
       link: "#",
     },
   ];
@@ -67,7 +70,7 @@ const Feature = () => {
                 total,
                 happy,
                 percent,
-                img,
+                image,
                 link = "#",
               } = item;
               return (
@@ -106,7 +109,7 @@ const Feature = () => {
                       </div>
                     </div>
                     <div className="position-relative mt-auto">
-                      <img className="img-fluid" src={img} alt="" />
+                      <img className="img-fluid" src={image} alt="" />
                       <div className="causes-overlay">
                         <a className="btn btn-outline-primary" href={link}>
                           Read More
