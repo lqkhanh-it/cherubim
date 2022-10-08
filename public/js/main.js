@@ -15,18 +15,28 @@
   new WOW().init();
 
   // Fixed Navbar
+  var flag;
+  $(window).ready(() => {
+    flag = $(".nav-link").hasClass("text-white");
+  });
   $(window).scroll(function () {
+    console.log(flag);
     if ($(window).width() < 992) {
       if ($(this).scrollTop() > 45) {
         $(".fixed-top").addClass("bg-light shadow");
+        if (flag) $(".nav-link").removeClass("text-white");
       } else {
-        $(".fixed-top").removeClass("bg-light shadow");
+        $(".fixed-top").removeClass("bg-light shadow text-white");
+        if (flag) $(".nav-link").addClass("text-white");
       }
     } else {
       if ($(this).scrollTop() > 45) {
         $(".fixed-top").addClass("bg-light shadow").css("top", -45);
+        $(".nav-link").removeClass("text-white");
+        if (flag) $(".nav-link").removeClass("text-white");
       } else {
-        $(".fixed-top").removeClass("bg-light shadow").css("top", 0);
+        $(".fixed-top").removeClass("bg-light shadow text-white").css("top", 0);
+        if (flag) $(".nav-link").addClass("text-white");
       }
     }
   });
