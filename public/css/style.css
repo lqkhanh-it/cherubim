@@ -2,7 +2,7 @@
 :root {
   --primary: #001d23;
   --secondary: #001d23;
-  --light: #001d23;
+  --light: #ffffff;
   --dark: #001d23;
 }
 
@@ -90,15 +90,20 @@
 
 .navbar .navbar-nav .nav-link {
   margin-right: 30px;
-  padding: 25px 0;
+  padding: 12px 4;
+  border-radius: 8px;
   color: #001d23;
   font-weight: 500;
   outline: none;
 }
 
+.navbar-collapse {
+  padding: 12px 0;
+}
+
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.06);
   color: var(--primary);
 }
 
@@ -106,11 +111,11 @@
   .navbar .navbar-nav {
     margin-top: 10px;
     border-top: 1px solid rgba(0, 0, 0, 0.07);
-    background: var(--dark);
+    background: var(--light);
   }
 
   .navbar .navbar-nav .nav-link {
-    padding: 10px 0;
+    padding: 10px;
   }
 }
 

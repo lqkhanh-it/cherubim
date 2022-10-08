@@ -1,8 +1,12 @@
 import React from "react";
-import about1 from "./../../img/default.jpeg";
-import about2 from "./../../img/default.jpeg";
+import defaultImage from "./../../img/default.jpeg";
 
 const About = () => {
+  const img =
+    "https://cdn3d.iconscout.com/3d/premium/thumb/boy-experiencing-meta-world-5077981-4241314.png";
+
+  const childImage =
+    "https://miro.medium.com/max/1400/1*RjkwZJJJvN96ic_9XVf40g.png";
   return (
     <div className="container-xxl py-5">
       <div className="container">
@@ -14,13 +18,13 @@ const About = () => {
             >
               <img
                 className="position-absolute w-100 h-100 pt-5 pe-5"
-                src={about1}
+                src={img || defaultImage}
                 alt=""
                 style={{ objectFit: "cover" }}
               />
               <img
                 className="position-absolute top-0 end-0 bg-white ps-2 pb-2"
-                src={about2}
+                src={childImage || defaultImage}
                 alt=""
                 style={{ width: "200px", height: "200px" }}
               />

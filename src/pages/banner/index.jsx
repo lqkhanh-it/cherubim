@@ -39,7 +39,7 @@ const Banner = () => {
                 >
                   <img
                     className="w-100 h-100"
-                    src={image}
+                    src={image || defaultImage}
                     alt="Cherubim ưu đãi"
                   />
                   <div className="carousel-caption">

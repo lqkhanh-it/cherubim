@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../img/logoNoText.png";
 
 const HeaderNavbar = () => {
   return (
@@ -8,6 +9,12 @@ const HeaderNavbar = () => {
     >
       <a href="index.html" className="navbar-brand ms-4 ms-lg-0">
         <h1 className="fw-bold text-cherubim-yellow m-0">
+          <img
+            src={logo}
+            alt="Logo IELTS Cherubim"
+            height={50}
+            className="mx-2"
+          />
           <span>IELTS </span>Cherubim
         </h1>
       </a>
@@ -35,9 +42,9 @@ const HeaderNavbar = () => {
           </a>
         </div>
         <div className="d-none d-lg-flex ms-2">
-          <a className="btn btn-outline-primary py-2 px-3" href="#">
-            Làm test ngay
-            <div className="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+          <a className="btn btn-cherubim py-2 px-3" href="#">
+            Đăng kí ngay
+            <div className="d-inline-flex btn-sm-square bg-white text-cherubim rounded-circle ms-2">
               <i className="fa fa-arrow-right"></i>
             </div>
           </a>

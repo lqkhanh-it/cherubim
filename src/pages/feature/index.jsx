@@ -1,5 +1,5 @@
 import React from "react";
-import courses1 from "../../img/default.jpeg";
+import defaultImage from "../../img/default.jpeg";
 
 const Feature = () => {
   const data = [
@@ -12,7 +12,7 @@ const Feature = () => {
       total: 190,
       happy: 187,
       percent: 99,
-      img: courses1,
+      img: "https://cdn3d.iconscout.com/3d/premium/thumb/nft-using-vr-4975998-4149676.png",
       link: "#",
     },
     {
@@ -24,7 +24,7 @@ const Feature = () => {
       total: 190,
       happy: 187,
       percent: 99,
-      img: courses1,
+      img: "https://cdn3d.iconscout.com/3d/premium/thumb/virtual-vision-4768955-3975759.png",
       link: "#",
     },
     {
@@ -36,7 +36,7 @@ const Feature = () => {
       total: 190,
       happy: 187,
       percent: 99,
-      img: courses1,
+      img: "https://cdn3d.iconscout.com/3d/premium/thumb/metaverse-5796851-4863019.png",
       link: "#",
     },
   ];
