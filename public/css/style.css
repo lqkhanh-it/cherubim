@@ -1,8 +1,8 @@
 /********** Template CSS **********/
 :root {
-  --primary: #f0c133;
-  --secondary: #fff0e6;
-  --light: #f8f8f9;
+  --primary: #001d23;
+  --secondary: #001d23;
+  --light: #001d23;
   --dark: #001d23;
 }
 
@@ -91,7 +91,7 @@
 .navbar .navbar-nav .nav-link {
   margin-right: 30px;
   padding: 25px 0;
-  color: #ffffff;
+  color: #001d23;
   font-weight: 500;
   outline: none;
 }
@@ -142,7 +142,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: rgba(0, 29, 35, 0.8);
+  /* background: rgba(0, 29, 35, 0.8); */
   z-index: 1;
 }
 

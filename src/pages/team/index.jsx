@@ -1,5 +1,5 @@
 import React from "react";
-import courses1 from "../../img/img.jpeg";
+import courses1 from "../../img/default.jpeg";
 
 const Team = () => {
   return (

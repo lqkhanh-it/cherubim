@@ -3,12 +3,12 @@ import React from "react";
 const HeaderNavbar = () => {
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn"
+      className="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn"
       data-wow-delay="0.1s"
     >
       <a href="index.html" className="navbar-brand ms-4 ms-lg-0">
-        <h1 className="fw-bold text-primary m-0">
-          <span className="text-white">IELST </span>Cherubim
+        <h1 className="fw-bold text-cherubim-yellow m-0">
+          <span>IELTS </span>Cherubim
         </h1>
       </a>
       <button
@@ -22,21 +22,21 @@ const HeaderNavbar = () => {
       <div className="collapse navbar-collapse" id="navbarCollapse">
         <div className="navbar-nav ms-auto p-4 p-lg-0">
           <a href="#" className="nav-item nav-link active">
-            Home
+            Về Cherubim
           </a>
           <a href="#" className="nav-item nav-link">
-            About
+            Khóa học
           </a>
           <a href="#" className="nav-item nav-link">
-            Causes
+            Thời khóa biểu
           </a>
           <a href="#" className="nav-item nav-link">
-            Contact
+            Liên hệ
           </a>
         </div>
         <div className="d-none d-lg-flex ms-2">
           <a className="btn btn-outline-primary py-2 px-3" href="#">
-            Donate Now
+            Làm test ngay
             <div className="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
               <i className="fa fa-arrow-right"></i>
             </div>

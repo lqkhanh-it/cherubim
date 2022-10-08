@@ -1,6 +1,6 @@
 import React from "react";
-import about1 from "./../../img/img.jpeg";
-import about2 from "./../../img/img.jpeg";
+import about1 from "./../../img/default.jpeg";
+import about2 from "./../../img/default.jpeg";
 
 const About = () => {
   return (
@@ -29,31 +29,30 @@ const About = () => {
           <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
             <div className="h-100">
               <div className="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">
-                About Us
+                Về Cherubim
               </div>
-              <h1 className="display-6 mb-5">
-                We Help People In Need Around The World
-              </h1>
+              <h1 className="display-6 mb-5">Biến sự mới mẻ thành thói quen</h1>
               <div className="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
                 <p className="text-dark mb-2">
-                  Aliqu diam amet diam et eos. Clita erat ipsum et lorem sed
-                  stet lorem sit clita duo justo erat amet
+                  Nhà trường chỉ cho chúng ta chiếc chìa khóa tri thức, học
+                  trong cuộc sống là công việc cả đời.
                 </p>
-                <span className="text-primary">Jhon Doe, Founder</span>
+                <span className="text-primary">Bill Gates</span>
               </div>
               <p className="mb-5">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                sed stet lorem sit clita duo justo magna dolore erat amet
+                Với phương châm học ngôn ngữ là phải lặp lại, Cherubim mang đến
+                một phương pháp giảng dạy đặc biệt giúp học viên luôn được ôn
+                lại những kiến thức đã học từ đó biến những thứ mới lạ thành
+                thói quen, góp phần lớn trong việc cải thiện kĩ năng và điểm số
               </p>
               <a className="btn btn-primary py-2 px-3 me-3" href="#">
-                Learn More
+                Tìm hiểu thêm
                 <div className="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                   <i className="fa fa-arrow-right"></i>
                 </div>
               </a>
               <a className="btn btn-outline-primary py-2 px-3" href="#">
-                Contact Us
+                Làm test ngay
                 <div className="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                   <i className="fa fa-arrow-right"></i>
                 </div>

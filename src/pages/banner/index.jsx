@@ -1,6 +1,6 @@
 import React from "react";
-import image1 from "../../img/carousel-1.jpg";
-import image2 from "../../img/carousel-2.jpg";
+import image1 from "../../img/default.jpeg";
+
 const Banner = () => {
   return (
     <div className="container-fluid p-0 mb-5">
@@ -11,7 +11,7 @@ const Banner = () => {
       >
         <div
           className="carousel-inner"
-          style={{ maxHeight: "100vh", minHeight: "100vh" }}
+          style={{ maxHeight: "70vh", minHeight: "70vh" }}
         >
           {[1, 2].map((key) => {
             return (
@@ -21,7 +21,7 @@ const Banner = () => {
               >
                 <img
                   className="w-100 h-100"
-                  src={key % 2 === 0 ? image1 : image2}
+                  src={key % 2 === 0 ? image1 : image1}
                   alt="aa"
                 />
                 <div className="carousel-caption">
