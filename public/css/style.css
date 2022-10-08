@@ -435,7 +435,7 @@
 
 .footer .btn.btn-square:hover {
   color: var(--secondary);
-  border-color: var(--light);
+  border-color: var(--dark);
 }
 
 .footer .copyright {

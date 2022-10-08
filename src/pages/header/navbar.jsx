@@ -7,15 +7,15 @@ const HeaderNavbar = () => {
       className="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn"
       data-wow-delay="0.1s"
     >
-      <a href="index.html" className="navbar-brand ms-4 ms-lg-0">
-        <h1 className="fw-bold text-cherubim-yellow m-0">
+      <a href="/" className="navbar-brand ms-4 ms-lg-0">
+        <h1 className="fw-bold text-cherubim-yellow m-0 fs-2">
           <img
             src={logo}
             alt="Logo IELTS Cherubim"
             height={50}
             className="mx-2"
           />
-          <span>IELTS </span>Cherubim
+          IELTS Cherubim
         </h1>
       </a>
       <button
