@@ -2,20 +2,6 @@ import React, { useState, useEffect } from "react";
 import defaultImage from "../../img/default.jpeg";
 import { getData } from "../../services/firebase";
 
-const temp = [
-  {
-    id: 1,
-    title: "Mùa lễ Halloween sắp tới",
-    description:
-      "Cùng Cherubim đón chờ một tháng 10 bùng nổ và nhiều ưu đãi nhé!!",
-    image:
-      "https://i0.wp.com/www.myuna.ca/assets/media/2020/10/Halloween-2021-banner-01.png?fit=1920%2C1080&ssl=1",
-    link: "#",
-    theme: "light",
-    float: "start",
-  },
-];
-
 const Banner = () => {
   const [data, setData] = useState();
   const [textColor, setTextColor] = useState("text-primary");
@@ -23,7 +9,6 @@ const Banner = () => {
     async function fetchData() {
       if (!data || data?.length === 0) {
         const tempData = await getData("banner");
-        console.log(tempData);
         setData([...tempData]);
         if (tempData[0]?.theme === "light") {
           setTextColor("text-white");
@@ -31,7 +16,6 @@ const Banner = () => {
       }
     }
     fetchData();
-    console.log(123);
   }, []);
 
   useEffect(() => {

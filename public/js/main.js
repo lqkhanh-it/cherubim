@@ -20,7 +20,6 @@
     flag = $(".nav-link").hasClass("text-white");
   });
   $(window).scroll(function () {
-    console.log(flag);
     if ($(window).width() < 992) {
       if ($(this).scrollTop() > 45) {
         $(".fixed-top").addClass("bg-light shadow");
