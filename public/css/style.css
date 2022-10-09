@@ -320,36 +320,6 @@
   overflow-x: hidden;
 }
 
-.testimonial-carousel::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  z-index: 1;
-}
-
-.testimonial-carousel::after {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 0;
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  z-index: 1;
-}
-
 @media (min-width: 768px) {
   .testimonial-carousel::before,
   .testimonial-carousel::after {
@@ -378,16 +348,11 @@
   display: flex;
   flex-wrap: nowrap;
   position: relative;
-  -webkit-animation: slide 8s ease-in-out infinite;
-  -moz-animation: slide 8s ease-in-out infinite;
-  -ms-animation: slide 8s ease-in-out infinite;
-  -o-animation: slide 8s ease-in-out infinite;
-  animation: slide 8s ease-in-out infinite;
-}
-
-.slide-container:hover {
-  animation-play-state: paused;
-  -webkit-animation-play-state: paused;
+  -webkit-animation: slideCustom 8s ease-in-out infinite;
+  -moz-animation: slideCustom 8s ease-in-out infinite;
+  -ms-animation: slideCustom 8s ease-in-out infinite;
+  -o-animation: slideCustom 8s ease-in-out infinite;
+  animation: slideCustom 8s ease-in-out infinite;
 }
 
 .slide-container .testimonial-item {
@@ -395,7 +360,7 @@
   flex: 0 0 500px;
 }
 
-@-webkit-keyframes slide {
+@-webkit-keyframes slideCustom {
   0% {
     left: 0;
   }
@@ -412,7 +377,7 @@
     left: 0;
   }
 }
-@-moz-keyframes slide {
+@-moz-keyframes slideCustom {
   0% {
     left: 0;
   }
@@ -429,7 +394,7 @@
     left: 0;
   }
 }
-@-ms-keyframes slide {
+@-ms-keyframes slideCustom {
   0% {
     left: 0;
   }
@@ -446,7 +411,7 @@
     left: 0;
   }
 }
-@-o-keyframes slide {
+@-o-keyframes slideCustom {
   0% {
     left: 0;
   }
@@ -463,7 +428,7 @@
     left: 0;
   }
 }
-@keyframes slide {
+@keyframes slideCustom {
   0% {
     left: 0;
   }
