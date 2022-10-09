@@ -32,6 +32,7 @@ const Banner = () => {
         id="header-carousel"
         className="carousel slide"
         data-bs-ride="carousel"
+        style={{ zIndex: 0 }}
       >
         <div className="carousel-inner" style={heightConfig}>
           {data &&

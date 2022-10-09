@@ -1,7 +1,9 @@
 import React from "react";
 import logo from "../../img/logoNoText.png";
 
-const HeaderNavbar = () => {
+const HeaderNavbar = ({ modalProps }) => {
+  const { openModal } = modalProps;
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn"
@@ -35,19 +37,16 @@ const HeaderNavbar = () => {
             Khóa học
           </a>
           <a href="#" className="nav-item nav-link">
-            Thời khóa biểu
-          </a>
-          <a href="#" className="nav-item nav-link">
             Liên hệ
           </a>
         </div>
         <div className="d-none d-lg-flex ms-2">
-          <a className="btn btn-cherubim py-2 px-3" href="#">
+          <div className="btn btn-cherubim py-2 px-3" onClick={openModal}>
             Đăng kí ngay
             <div className="d-inline-flex btn-sm-square bg-white text-cherubim rounded-circle ms-2">
               <i className="fa fa-arrow-right"></i>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </nav>

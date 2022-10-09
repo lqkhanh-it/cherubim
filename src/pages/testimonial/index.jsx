@@ -4,7 +4,7 @@ import courses1 from "../../img/default.jpeg";
 const Testimonial = () => {
   return (
     <div className="container-xxl py-5">
-      <div className="container">
+      <div className="container position-relative">
         <div
           className="text-center mx-auto mb-5 wow fadeInUp"
           data-wow-delay="0.1s"
