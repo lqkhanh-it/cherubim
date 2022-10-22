@@ -26,7 +26,7 @@ const ModelForm = ({ modalProps }) => {
       >
         <h2>Đăng kí tư vấn</h2>
         <p>Cùng IELTS Cherubim bước vào hành trình mới nhé!!!</p>
-        <RegisterForm />
+        <RegisterForm onRequestClose={closeModal} />
       </Modal>
     </div>
   );

@@ -8,6 +8,9 @@ import {
   getDocs,
   query,
   where,
+  setDoc,
+  doc,
+  Timestamp,
 } from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
@@ -39,7 +42,6 @@ export async function getData(name) {
 export async function queryData(name, whereString, condition, value) {
   const q = query(collection(db, name), where(whereString, condition, value));
   const querySnapshot = await getDocs(q);
-  console.log(querySnapshot);
   const listData = [];
 
   querySnapshot.forEach((doc) => {
@@ -49,4 +51,23 @@ export async function queryData(name, whereString, condition, value) {
   });
 
   return listData;
+}
+
+export async function registerInformation(payload) {
+  const { name, phone, email, type, reason, level } = payload;
+  const col = collection(db, "register");
+
+  const result = await setDoc(doc(col), {
+    name,
+    phone,
+    email,
+    type,
+    reason,
+    level,
+    createdAt: new Timestamp().toMillis(),
+    stringDate: new Date(new Timestamp().toMillis()).format(
+      "dd/MM/yyyy HH:mm:ss:SSS"
+    ),
+  });
+  return result;
 }
