@@ -1,48 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import defaultImage from "../../img/default.jpeg";
+import { queryData } from "../../services/firebase";
 
 const Feature = () => {
-  const data = [
-    {
-      id: "1",
-      name: "Level 1",
-      title: "Beginner Course",
-      description:
-        "Lorem Ipsum is Lorem Ipsum and Lorem Ipsum is Lorem Ipsum is Lorem Ipsum is Lorem Ipsum",
-      total: 190,
-      happy: 187,
-      percent: 99,
-      image:
-        "https://cdn3d.iconscout.com/3d/premium/thumb/nft-using-vr-4975998-4149676.png",
-      link: "#",
-    },
-    {
-      id: "2",
-      name: "Level 3",
-      title: "Middle Course",
-      description:
-        "Lorem Ipsum is Lorem Ipsum and Lorem Ipsum is Lorem Ipsum is Lorem Ipsum is Lorem Ipsum",
-      total: 190,
-      happy: 187,
-      percent: 99,
-      image:
-        "https://cdn3d.iconscout.com/3d/premium/thumb/virtual-vision-4768955-3975759.png",
-      link: "#",
-    },
-    {
-      id: "3",
-      name: "Level 5",
-      title: "Master Course",
-      description:
-        "Lorem Ipsum is Lorem Ipsum and Lorem Ipsum is Lorem Ipsum is Lorem Ipsum is Lorem Ipsum",
-      total: 190,
-      happy: 187,
-      percent: 99,
-      image:
-        "https://cdn3d.iconscout.com/3d/premium/thumb/metaverse-5796851-4863019.png",
-      link: "#",
-    },
-  ];
+  const [data, setData] = useState();
+  useEffect(() => {
+    async function fetchData() {
+      if (!data || data?.length === 0) {
+        const tempData = await queryData(
+          "highlightCources",
+          "isHighlight",
+          "==",
+          true
+        );
+        setData([...tempData]);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="container-xxl bg-light my-5 py-5">
       <div className="container py-5">
@@ -68,8 +44,7 @@ const Feature = () => {
                 title,
                 description,
                 total,
-                happy,
-                percent,
+                raised,
                 image,
                 link = "#",
               } = item;
@@ -92,7 +67,7 @@ const Feature = () => {
                             {total} <small className="text-body">Goal</small>
                           </p>
                           <p className="text-dark">
-                            {happy} <small className="text-body">Raised</small>
+                            {raised} <small className="text-body">Raised</small>
                           </p>
                         </div>
                         <div className="progress">
@@ -103,13 +78,17 @@ const Feature = () => {
                             aria-valuemin="0"
                             aria-valuemax="100"
                           >
-                            <span>{percent}%</span>
+                            <span>{(raised / total) * 100}%</span>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="position-relative mt-auto">
-                      <img className="img-fluid" src={image} alt="" />
+                      <img
+                        className="img-fluid"
+                        src={image || defaultImage}
+                        alt=""
+                      />
                       <div className="causes-overlay">
                         <a className="btn btn-outline-primary" href={link}>
                           Read More

@@ -2,7 +2,13 @@
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -22,6 +28,25 @@ const db = getFirestore(app);
 export async function getData(name) {
   const col = collection(db, name);
   const snapshot = await getDocs(col);
-  const listData = snapshot.docs.map((doc) => doc.data());
+  const listData = snapshot.docs.map((doc) => {
+    const temp = doc.data();
+    temp.firestoreId = doc.id;
+    return { ...temp };
+  });
+  return listData;
+}
+
+export async function queryData(name, whereString, condition, value) {
+  const q = query(collection(db, name), where(whereString, condition, value));
+  const querySnapshot = await getDocs(q);
+  console.log(querySnapshot);
+  const listData = [];
+
+  querySnapshot.forEach((doc) => {
+    const temp = doc.data();
+    temp.firestoreId = doc.id;
+    listData.push({ ...temp });
+  });
+
   return listData;
 }

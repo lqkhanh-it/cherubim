@@ -49,15 +49,9 @@ const About = () => {
                 lại những kiến thức đã học từ đó biến những thứ mới lạ thành
                 thói quen, góp phần lớn trong việc cải thiện kĩ năng và điểm số
               </p>
-              <a className="btn btn-primary py-2 px-3 me-3" href="#">
+              <a className="btn btn-primary py-2 px-3 me-3" href="/contact">
                 Tìm hiểu thêm
                 <div className="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                  <i className="fa fa-arrow-right"></i>
-                </div>
-              </a>
-              <a className="btn btn-outline-primary py-2 px-3" href="#">
-                Làm test ngay
-                <div className="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                   <i className="fa fa-arrow-right"></i>
                 </div>
               </a>

@@ -11,3 +11,141 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.newsbanner-container {
+  height: 50vh;
+  padding: 175px 0;
+  margin: 0;
+  border: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f1f2f4;
+  position: relative;
+}
+
+.newsbanner-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.newsbanner-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  flex-direction: column;
+  color: #fff;
+}
+
+.another-overlay {
+  color: #000 !important;
+  text-transform: capitalize;
+  top: 50px;
+}
+
+.newsbanner-title {
+  text-align: center;
+  font-size: 6vw;
+  font-weight: 300;
+  font-family: sans-serif;
+  text-transform: capitalize;
+}
+
+.newsbanner-breadcrumb {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+
+.ContactBody {
+  padding: 40px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-info-title {
+  margin-top: 50px;
+  color: #888;
+  font-size: 18px;
+  width: 60%;
+}
+
+.contact-info-detail {
+  margin-top: 40px;
+  width: 60%;
+}
+
+.contact-icon {
+  font-size: 20px;
+  color: #888;
+  margin-right: 40px;
+  line-height: 100%;
+}
+
+.contact-info-item {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contact-info-title2 {
+  font-size: 14px !important;
+  text-transform: uppercase;
+  margin-right: 30px;
+  color: #888 !important;
+  font-weight: bold !important;
+  width: 80px;
+}
+
+.contact-info-item p {
+  color: #111;
+  font-size: 14px;
+}
+
+.GetInTouch {
+  width: 100%;
+  margin: 40px 0;
+  justify-content: space-between;
+}
+
+.getintouch-container {
+  background-color: #edeff1;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.GetInTouch .map {
+  width: 63%;
+}
+
+.google-map {
+  height: 100%;
+}
+
+.getintouch-form {
+  width: 37%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.getintouch-form label {
+  font-size: 20px;
+  font-family: Poppins-Medium;
+}
+
+.getintouch-form input {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #000;
+  background: transparent;
+  font-size: 14px;
+  padding-bottom: 5px;
+}

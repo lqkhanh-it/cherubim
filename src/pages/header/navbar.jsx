@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../img/logoNoText.png";
+import { Link } from "react-router-dom";
+
+const DEFAULT_PATH = {
+  HOME: "HOME",
+  COURSE: "COURSE",
+  CONTACT: "CONTACT",
+};
 
 const HeaderNavbar = ({ modalProps }) => {
   const { openModal } = modalProps;
+  const [path, setPath] = useState(DEFAULT_PATH.HOME);
+
+  const setPathChange = (payload) => {
+    if (payload) {
+      setPath(DEFAULT_PATH[payload] ?? DEFAULT_PATH["HOME"]);
+    }
+  };
+
+  useEffect(() => {
+    const temp = window.location.pathname;
+    if (temp === "/contact") {
+      setPath(DEFAULT_PATH["CONTACT"]);
+    } else if (temp === "/courses") {
+      setPath(DEFAULT_PATH["COURSE"]);
+    } else {
+      setPath(DEFAULT_PATH["HOME"]);
+    }
+  }, []);
 
   return (
     <nav
@@ -30,15 +55,39 @@ const HeaderNavbar = ({ modalProps }) => {
       </button>
       <div className="collapse navbar-collapse" id="navbarCollapse">
         <div className="navbar-nav ms-auto p-4 p-lg-0">
-          <a href="#" className="nav-item nav-link active">
+          <Link
+            to={"/"}
+            className={`nav-item nav-link ${
+              path && path === DEFAULT_PATH.HOME && "active"
+            }`}
+            onClick={() => {
+              setPathChange(DEFAULT_PATH.HOME);
+            }}
+          >
             Về Cherubim
-          </a>
-          <a href="#" className="nav-item nav-link">
+          </Link>
+          <Link
+            to="/courses"
+            className={`nav-item nav-link ${
+              path && path === DEFAULT_PATH.COURSE && "active"
+            }`}
+            onClick={() => {
+              setPathChange(DEFAULT_PATH.COURSE);
+            }}
+          >
             Khóa học
-          </a>
-          <a href="#" className="nav-item nav-link">
+          </Link>
+          <Link
+            to="/contact"
+            className={`nav-item nav-link ${
+              path && path === DEFAULT_PATH.CONTACT && "active"
+            }`}
+            onClick={() => {
+              setPathChange(DEFAULT_PATH.CONTACT);
+            }}
+          >
             Liên hệ
-          </a>
+          </Link>
         </div>
         <div className="d-none d-lg-flex ms-2">
           <div className="btn btn-cherubim py-2 px-3" onClick={openModal}>

@@ -1,54 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import defaultImage from "../../img/default.jpeg";
+import { getData } from "../../services/firebase";
 
 const Team = () => {
-  const data = [
-    {
-      id: 1,
-      name: "Mr. Sang Vo",
-      description: [
-        "IELTS 8.5 overall overall overall",
-        "IELTS 8.5 overall overall overall",
-        "IELTS 8.5 overall overall overall",
-        "IELTS 8.5 overall overall overall",
-        "IELTS 8.5 overall",
-        "IELTS 8.5 overall",
-      ],
-      highlight: "IELTS 8.5 overall",
-      image:
-        "https://scontent.fsgn5-15.fna.fbcdn.net/v/t1.15752-9/307985952_598529305297869_9017569503134287725_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=-n77dDoRCNUAX-zj2b0&tn=zCCYt8rYpvP7t-K9&_nc_ht=scontent.fsgn5-15.fna&oh=03_AVIPtgyqT0jgTMTpZ1Cid3ahTCk8nlzZLI1QBkyGKUKJOQ&oe=6368FFF0",
-    },
-    {
-      id: 1,
-      name: "Mr. Sang Vo",
-      description: [
-        "IELTS 8.5 overall",
-        "IELTS 8.5 overall",
-        "IELTS 8.5 overall",
-        "IELTS 8.5 overall overall overall",
-        "IELTS 8.5 overall overall overall",
-        "IELTS 8.5 overall overall overall",
-      ],
-      highlight: "IELTS 8.5 overall",
-      image:
-        "https://scontent.fsgn5-15.fna.fbcdn.net/v/t1.15752-9/307985952_598529305297869_9017569503134287725_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=-n77dDoRCNUAX-zj2b0&tn=zCCYt8rYpvP7t-K9&_nc_ht=scontent.fsgn5-15.fna&oh=03_AVIPtgyqT0jgTMTpZ1Cid3ahTCk8nlzZLI1QBkyGKUKJOQ&oe=6368FFF0",
-    },
-    {
-      id: 1,
-      name: "Mr. Sang Vo",
-      description: [
-        "IELTS 8.5 overall",
-        "IELTS 8.5 overall",
-        "IELTS 8.5 overall overall overall",
-        "IELTS 8.5 overall overall overall",
-        "IELTS 8.5 overall overall overall",
-        "IELTS 8.5 overall",
-      ],
-      highlight: "IELTS 8.5 overall",
-      image:
-        "https://scontent.fsgn5-15.fna.fbcdn.net/v/t1.15752-9/307985952_598529305297869_9017569503134287725_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=-n77dDoRCNUAX-zj2b0&tn=zCCYt8rYpvP7t-K9&_nc_ht=scontent.fsgn5-15.fna&oh=03_AVIPtgyqT0jgTMTpZ1Cid3ahTCk8nlzZLI1QBkyGKUKJOQ&oe=6368FFF0",
-    },
-  ];
+  const [data, setData] = useState();
+  useEffect(() => {
+    async function fetchData() {
+      if (!data || data?.length === 0) {
+        const tempData = await getData("team");
+        setData([...tempData]);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="container-xxl py-5">
       <div className="container">
@@ -68,12 +33,13 @@ const Team = () => {
           {data &&
             data?.length > 0 &&
             data.map((item) => {
-              const { id, name, highlight, image, description } = item;
+              const { firestoreId, name, highlight, image, descriptions } =
+                item;
               return (
                 <div
                   className="col-lg-3 col-md-6 wow fadeInUp"
                   data-wow-delay="0.1s"
-                  key={id}
+                  key={firestoreId}
                 >
                   <div className="team-item position-relative rounded overflow-hidden">
                     <div className="overflow-hidden">
@@ -88,9 +54,9 @@ const Team = () => {
                       <p className="text-primary">{highlight}</p>
                     </div>
                     <div className="team-description bg-light text-start p-4">
-                      {description &&
-                        description?.length > 0 &&
-                        description?.map((item) => {
+                      {descriptions &&
+                        descriptions?.length > 0 &&
+                        descriptions?.map((item) => {
                           return (
                             <p className="text-primary pb-1 m-0" key={item}>
                               - {item}

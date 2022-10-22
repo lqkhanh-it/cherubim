@@ -9,7 +9,7 @@ const Footer = () => {
     >
       <div className="container py-5">
         <div className="row g-5">
-          <div className="col-lg-3 col-md-6">
+          <div className="col-lg-6 col-md-12">
             <img src={logo} alt="Logo IELTS Cherubim" height={60} />
             <h1 className="fw-bold text-cherubim-yellow mb-4">
               IELST
@@ -34,40 +34,32 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="col-lg-3 col-md-6">
-            <h5 className="text-dark mb-4">Address</h5>
-            <p>
-              <i className="fa fa-map-marker-alt me-3"></i>No Trang Long Street,
-              HCMC, VN
-            </p>
-            <p>
-              <i className="fa fa-phone-alt me-3"></i>+012 345 67890
-            </p>
-            <p>
-              <i className="fa fa-envelope me-3"></i>
-              info.ieltscherubim@gmail.com
-            </p>
+          <div className="col-lg-6 col-md-12">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+                width: "fit-content",
+                float: "right",
+              }}
+            >
+              <h5 className="text-dark mb-4">Address</h5>
+              <p>
+                <i className="fa fa-map-marker-alt me-3"></i>No Trang Long
+                Street, HCMC, VN
+              </p>
+              <p>
+                <i className="fa fa-phone-alt me-3"></i>+012 345 67890
+              </p>
+              <p>
+                <i className="fa fa-envelope me-3"></i>
+                info.ieltscherubim@gmail.com
+              </p>
+            </div>
           </div>
-          <div className="col-lg-3 col-md-6 ">
-            <h5 className="text-dark mb-4">Quick Links</h5>
-            <a className="btn btn-link text-cherubim-50" href="/about">
-              About Us
-            </a>
-            <a className="btn btn-link text-cherubim-50" href="/contact">
-              Contact Us
-            </a>
-            <a className="btn btn-link text-cherubim-50" href="/features">
-              Our Services
-            </a>
-            <a className="btn btn-link text-cherubim-50" href="/terms">
-              Terms & Condition
-            </a>
-            <a className="btn btn-link text-cherubim-50" href="/support">
-              Support
-            </a>
-          </div>
-          <div className="col-lg-3 col-md-6">
-            <h5 className="text-light mb-4">Newsletter</h5>
+          {/* <div className="col-lg-4 col-md-6">
+            <h5 className="text-dark mb-4">Newsletter</h5>
             <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
             <div
               className="position-relative mx-auto"
@@ -85,7 +77,7 @@ const Footer = () => {
                 SignUp
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="container-fluid copyright">
