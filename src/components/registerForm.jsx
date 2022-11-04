@@ -48,7 +48,7 @@ const RegisterForm = ({ onRequestClose }) => {
     <div>
       {done ? (
         <div>
-          <div class="alert alert-success" role="alert">
+          <div className="alert alert-success" role="alert">
             Hoàn tất! Cherubim đã nhận được thông tin và sẽ liên hệ lại bạn
             trong 24h nhé
           </div>

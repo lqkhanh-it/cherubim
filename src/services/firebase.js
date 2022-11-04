@@ -57,17 +57,17 @@ export async function registerInformation(payload) {
   const { name, phone, email, type, reason, level } = payload;
   const col = collection(db, "register");
 
-  const result = await setDoc(doc(col), {
+  const formData = {
     name,
     phone,
     email,
     type,
     reason,
     level,
-    createdAt: new Timestamp().toMillis(),
-    stringDate: new Date(new Timestamp().toMillis()).format(
-      "dd/MM/yyyy HH:mm:ss:SSS"
-    ),
-  });
+    createdAt: Date.now(),
+    stringDate: new Date().toLocaleString(),
+  };
+
+  const result = await setDoc(doc(col), formData);
   return result;
 }
