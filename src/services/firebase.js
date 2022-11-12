@@ -10,7 +10,6 @@ import {
   where,
   setDoc,
   doc,
-  Timestamp,
 } from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration

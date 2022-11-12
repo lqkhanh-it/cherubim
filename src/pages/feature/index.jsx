@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import defaultImage from "../../img/default.jpeg";
 import { queryData } from "../../services/firebase";
 
-const Feature = () => {
+const Feature = ({ modalProps }) => {
+  const { openModal } = modalProps;
   const [data, setData] = useState();
   useEffect(() => {
     async function fetchData() {
@@ -13,7 +14,8 @@ const Feature = () => {
           "==",
           true
         );
-        setData([...tempData]);
+        const temp = tempData.sort((a, b) => a?.id - b?.id);
+        setData([...temp]);
       }
     }
     fetchData();
@@ -61,41 +63,24 @@ const Feature = () => {
                       </div>
                       <h5 className="mb-3">{title}</h5>
                       <p>{description}</p>
-                      <div className="causes-progress bg-light p-3 pt-2">
-                        <div className="d-flex justify-content-between">
-                          <p className="text-dark">
-                            {total} <small className="text-body">Goal</small>
-                          </p>
-                          <p className="text-dark">
-                            {raised} <small className="text-body">Raised</small>
-                          </p>
-                        </div>
-                        <div className="progress">
-                          <div
-                            className="progress-bar"
-                            role="progressbar"
-                            aria-valuenow="90"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          >
-                            <span>{(raised / total) * 100}%</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                     <div className="position-relative mt-auto">
                       <img
                         className="img-fluid"
                         src={image || defaultImage}
-                        alt=""
+                        alt="feature cherubim"
+                        style={{ width: "408px", height: "408px" }}
                       />
                       <div className="causes-overlay">
-                        <a className="btn btn-outline-primary" href={link}>
+                        <div
+                          className="btn btn-outline-primary"
+                          onClick={openModal}
+                        >
                           Read More
-                          <div className="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                          <div className="d-inline-flex btn-sm-square rounded-circle ms-2">
                             <i className="fa fa-arrow-right"></i>
                           </div>
-                        </a>
+                        </div>
                       </div>
                     </div>
                   </div>

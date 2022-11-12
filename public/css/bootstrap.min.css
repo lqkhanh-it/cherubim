@@ -39,6 +39,7 @@
   --cherubim-blue: #0b1426;
   --cherubim-blue-50: rgba(11, 20, 38, 0.5);
   --cherubim-yellow: #d4963f;
+  --cherubim-yellow-50: #d4963f77;
 }
 *,
 *::before,
@@ -2630,13 +2631,13 @@ fieldset:disabled .btn {
 /* custom btn  */
 .btn-cherubim {
   color: var(--cherubim-yellow);
-  background-color: transparent;
   border-color: var(--cherubim-yellow);
 }
+
 .btn-cherubim:hover {
-  color: #fff0e6;
+  color: var(--cherubim-yellow);
   background-color: var(--cherubim-yellow);
-  border-color: var(--cherubim-yellow);
+  box-shadow: 0 0 0 0.25rem var(--cherubim-yellow-50);
 }
 .btn-cherubim:focus {
   color: #fff0e6;
@@ -6875,6 +6876,9 @@ fieldset:disabled .btn {
 }
 .bg-primary {
   background-color: var(--cherubim-blue) !important;
+}
+.bg-cherubim-50 {
+  background-color: var(--cherubim-blue-50) !important;
 }
 .bg-secondary {
   background-color: #fff0e6 !important;

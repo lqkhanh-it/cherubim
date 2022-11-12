@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import defaultImage from "../../img/default.jpeg";
-import bg from "../../img/contact.jpg";
 import BannerV2 from "../../components/bannerV2";
 import { queryData } from "../../services/firebase";
 
-const Courses = () => {
+const Courses = ({ modalProps }) => {
+  const { openModal } = modalProps;
+
   const [data, setData] = useState();
   useEffect(() => {
     async function fetchData() {
@@ -15,7 +16,8 @@ const Courses = () => {
           "==",
           true
         );
-        setData([...tempData]);
+        const temp = tempData.sort((a, b) => a?.id - b?.id);
+        setData([...temp]);
       }
     }
     fetchData();
@@ -23,7 +25,7 @@ const Courses = () => {
 
   return (
     <div>
-      <BannerV2 bannerImage={bg} position={"0px"} title={"Khóa học"} />
+      <BannerV2 position={"0px"} title={"Khóa học"} />
 
       <div className="container-xxl my-3">
         <div className="container py-5">
@@ -46,6 +48,7 @@ const Courses = () => {
                 link,
                 shortDescription,
                 title,
+                name,
                 firestoreId,
               } = item;
               return (
@@ -65,17 +68,23 @@ const Courses = () => {
                   </div>
                   <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div className="h-100">
-                      <h1 className="display-6 mb-5">{title}</h1>
+                      <h1 className="display-6 mb-5">
+                        {title} <br />{" "}
+                        <p style={{ fontSize: 20, fontWeight: 400 }}>{name}</p>
+                      </h1>
                       <div className="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
                         <p className="text-dark mb-2">{shortDescription}</p>
                       </div>
                       <p className="mb-5">{description}</p>
-                      <a className="btn btn-primary py-2 px-3 me-3" href={link}>
+                      <div
+                        className="btn btn-primary py-2 px-3 me-3"
+                        onClick={openModal}
+                      >
                         Đăng kí ngay
                         <div className="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                           <i className="fa fa-arrow-right"></i>
                         </div>
-                      </a>
+                      </div>
                     </div>
                   </div>
                 </div>

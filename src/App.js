@@ -30,8 +30,15 @@ function App() {
       <Router>
         <Header modalProps={modalProps} />
         <Routes>
-          <Route exact path="/" element={<Dashboard />} />
-          <Route path="/courses" element={<Courses />} />
+          <Route
+            exact
+            path="/"
+            element={<Dashboard modalProps={modalProps} />}
+          />
+          <Route
+            path="/courses"
+            element={<Courses modalProps={modalProps} />}
+          />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />

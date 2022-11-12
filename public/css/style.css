@@ -64,13 +64,18 @@
   transition: 0.5s;
 }
 
-.btn.btn-primary,
+.btn.btn-primary {
+  color: var(--cherubim-yellow);
+  border-color: var(--dark);
+}
+
 .btn.btn-outline-primary:hover {
-  color: #ffffff;
+  color: var(--cherubim-yellow);
+  border-color: var(--cherubim-yellow);
 }
 
 .btn.btn-primary:hover {
-  color: var(--primary);
+  color: var(--dark) !important;
   background: transparent;
 }
 
@@ -132,7 +137,7 @@
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color: var(--cherubim-yellow-50);
   color: var(--primary);
 }
 
@@ -598,4 +603,8 @@
 
 .footer .copyright a:hover {
   color: var(--primary);
+}
+
+.ReactModal__Overlay--after-open {
+  z-index: 3000;
 }

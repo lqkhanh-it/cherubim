@@ -22,20 +22,20 @@
   $(window).scroll(function () {
     if ($(window).width() < 992) {
       if ($(this).scrollTop() > 45) {
-        $(".fixed-top").addClass("bg-light shadow");
-        if (flag) $(".nav-link").removeClass("text-white");
+        $(".fixed-top").addClass("bg-primary shadow");
+        if (flag) $(".nav-link").removeClass("");
       } else {
-        $(".fixed-top").removeClass("bg-light shadow text-white");
-        if (flag) $(".nav-link").addClass("text-white");
+        $(".fixed-top").removeClass("bg-primary shadow");
+        if (flag) $(".nav-link").addClass("");
       }
     } else {
       if ($(this).scrollTop() > 45) {
-        $(".fixed-top").addClass("bg-light shadow").css("top", -45);
-        $(".nav-link").removeClass("text-white");
-        if (flag) $(".nav-link").removeClass("text-white");
+        $(".fixed-top").addClass("bg-primary shadow").css("top", -45);
+        $(".nav-link").removeClass("");
+        if (flag) $(".nav-link").removeClass("");
       } else {
-        $(".fixed-top").removeClass("bg-light shadow text-white").css("top", 0);
-        if (flag) $(".nav-link").addClass("text-white");
+        $(".fixed-top").removeClass("bg-primary shadow").css("top", 0);
+        if (flag) $(".nav-link").addClass("");
       }
     }
   });
@@ -62,26 +62,4 @@
     },
     { offset: "80%" }
   );
-
-  // Testimonials carousel
-  $(".testimonial-carousel").owlCarousel({
-    autoplay: false,
-    smartSpeed: 1000,
-    center: true,
-    dots: false,
-    loop: true,
-    nav: true,
-    navText: [
-      '<i class="bi bi-arrow-left"></i>',
-      '<i class="bi bi-arrow-right"></i>',
-    ],
-    responsive: {
-      0: {
-        items: 1,
-      },
-      768: {
-        items: 2,
-      },
-    },
-  });
 })(jQuery);

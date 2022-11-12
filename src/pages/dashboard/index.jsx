@@ -4,13 +4,15 @@ import About from "../about";
 import Feature from "./../feature";
 import Team from "./../team/index";
 import Testimonial from "./../testimonial/index";
+import Why from "./../why/index";
 
-const Dashboard = () => {
+const Dashboard = ({ modalProps }) => {
   return (
     <>
       <Banner />
       <About />
-      <Feature />
+      <Feature modalProps={modalProps} />
+      <Why />
       <Team />
       <Testimonial />
     </>
