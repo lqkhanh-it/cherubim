@@ -42,7 +42,7 @@ const Footer = () => {
                 float: "right",
               }}
             >
-              <h5 className="text-white mb-4">Address</h5>
+              <p className="fa-2x text-white mb-4">Address</p>
               <p>
                 <i className="fa fa-map-marker-alt me-3"></i>
                 <b>Trụ sở chính</b>: 5/109/8N Nơ Trang Long , P.7, Q.Bình Thạnh,
@@ -96,7 +96,7 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; IELTS Cherubim
+              IELTS Cherubim &copy; Copyright, 2022. All Rights Reserved.
             </div>
           </div>
         </div>

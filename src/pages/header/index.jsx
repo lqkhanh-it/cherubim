@@ -8,7 +8,7 @@ const Header = ({ modalProps }) => {
       className="container-fluid fixed-top px-0 wow fadeIn"
       data-wow-delay="0.1s"
     >
-      <Info></Info>
+      {/* <Info></Info> */}
       <HeaderNavbar modalProps={modalProps}></HeaderNavbar>
     </div>
   );

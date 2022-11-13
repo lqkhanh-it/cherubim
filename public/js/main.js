@@ -14,31 +14,31 @@
   // Initiate the wowjs
   new WOW().init();
 
-  // Fixed Navbar
-  var flag;
-  $(window).ready(() => {
-    flag = $(".nav-link").hasClass("text-white");
-  });
-  $(window).scroll(function () {
-    if ($(window).width() < 992) {
-      if ($(this).scrollTop() > 45) {
-        $(".fixed-top").addClass("bg-primary shadow");
-        if (flag) $(".nav-link").removeClass("");
-      } else {
-        $(".fixed-top").removeClass("bg-primary shadow");
-        if (flag) $(".nav-link").addClass("");
-      }
-    } else {
-      if ($(this).scrollTop() > 45) {
-        $(".fixed-top").addClass("bg-primary shadow").css("top", -45);
-        $(".nav-link").removeClass("");
-        if (flag) $(".nav-link").removeClass("");
-      } else {
-        $(".fixed-top").removeClass("bg-primary shadow").css("top", 0);
-        if (flag) $(".nav-link").addClass("");
-      }
-    }
-  });
+  // // Fixed Navbar
+  // var flag;
+  // $(window).ready(() => {
+  //   flag = $(".nav-link").hasClass("text-white");
+  // });
+  // $(window).scroll(function () {
+  //   if ($(window).width() < 992) {
+  //     if ($(this).scrollTop() > 45) {
+  //       $(".fixed-top").addClass("bg-primary shadow");
+  //       if (flag) $(".nav-link").removeClass("");
+  //     } else {
+  //       $(".fixed-top").removeClass("bg-primary shadow");
+  //       if (flag) $(".nav-link").addClass("");
+  //     }
+  //   } else {
+  //     if ($(this).scrollTop() > 45) {
+  //       $(".fixed-top").addClass("bg-primary shadow").css("top", -45);
+  //       $(".nav-link").removeClass("");
+  //       if (flag) $(".nav-link").removeClass("");
+  //     } else {
+  //       $(".fixed-top").removeClass("bg-primary shadow").css("top", 0);
+  //       if (flag) $(".nav-link").addClass("");
+  //     }
+  //   }
+  // });
 
   // Back to top button
   $(window).scroll(function () {
